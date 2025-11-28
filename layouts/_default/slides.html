@@ -1,0 +1,84 @@
+{{ define "main" }}
+<main class="main wrapper">
+  <article class="post-single">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
+    <div class="slides-container-vertical">
+      {{ range .Pages.ByWeight }}
+        {{ $slides := split .RawContent "\n---\n" }}
+
+        <section class="drug-slider slide-card" tabindex="0">
+          <h2>{{ .Title }}</h2>
+
+          <div class="mini-slider">
+            {{ range $i, $s := $slides }}
+              <div class="mini-slide{{ if eq $i 0 }} is-active{{ end }}">
+                {{ $s | markdownify }}
+              </div>
+            {{ end }}
+          </div>
+
+          <div class="mini-nav-wrap">
+            <button class="mini-nav mini-prev" type="button">‹</button>
+            <button class="mini-nav mini-next" type="button">›</button>
+          </div>
+        </section>
+      {{ end }}
+    </div>
+  </article>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.drug-slider').forEach(function (slider) {
+        const slides = slider.querySelectorAll('.mini-slide');
+        if (!slides.length) return;
+
+        let index = 0;
+
+        function show(i) {
+          index = (i + slides.length) % slides.length;
+          slides.forEach(function (s, j) {
+            if (j === index) {
+              s.classList.add('is-active');
+            } else {
+              s.classList.remove('is-active');
+            }
+          });
+        }
+
+        const prevBtn = slider.querySelector('.mini-prev');
+        const nextBtn = slider.querySelector('.mini-next');
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function () {
+            show(index - 1);
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function () {
+            show(index + 1);
+          });
+        }
+
+        // Klavye ile kontrol: kart odaktayken
+        slider.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight') {
+            show(index + 1);
+            e.preventDefault();
+          } else if (e.key === 'ArrowLeft') {
+            show(index - 1);
+            e.preventDefault();
+          }
+        });
+      });
+    });
+  </script>
+</main>
+{{ end }}

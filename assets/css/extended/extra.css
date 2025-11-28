@@ -1,0 +1,180 @@
+/* ANA LAYOUT */
+.main.wrapper {
+  max-width: 720px;
+  padding: 0 6%;
+}
+
+.post-single .post-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.post-single .post-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.post-single p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* HEADER / NAV */
+.nav-parent {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  margin-left: 0;  /* istersen -2px yapabilirsin */
+}
+
+.nav-parent:hover {
+  background: var(--entry-hover);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+}
+
+/* ANA SAYFADAKİ BÖLÜM KARTLARI (Endokrin / Hematoloji) */
+.home-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.home-section-card {
+  padding: 0.8rem 1.1rem;
+  border-radius: 10px;
+  background: var(--entry);
+  text-decoration: none;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.home-section-card:hover {
+  background: var(--entry-hover);
+  transform: none;
+}
+
+.home-section-card h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.80;   /* bir tık daha yumuşak */
+}
+
+/* Endokrin / Hematoloji sayfalarında başlık ile kartlar arası çizgi */
+.home-sections--with-divider {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* SLAYT KARTLARI (Oral AD içi Metformin, SGLT2 vs.) */
+.slides-container-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-top: 1.4rem;
+}
+
+.slide-card {
+  background: var(--entry);
+  border-radius: 10px;
+  padding: 1rem 1.2rem 1.3rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid var(--border);
+  opacity: 0;
+  animation: fadein 0.3s ease forwards;
+}
+
+/* Kart başlığı (Metformin, SGLT2...) */
+.slide-card > h2 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+/* Slayt içi başlıklar (# HbA1c düşüşü vs.) */
+.slide-card .mini-slide h1,
+.slide-card .mini-slide h2,
+.slide-card .mini-slide h3 {
+  font-size: 1.0rem;
+  font-weight: 600;
+  margin: 0.3rem 0 0.15rem;
+}
+
+/* Slayt içi paragraf & liste yazıları */
+.slide-card .mini-slide p,
+.slide-card .mini-slide li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+/* Liste içi bullet hizası / rengi */
+.slide-card ul,
+.slide-card ol {
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+/* SLAYT GÖSTERİMİ */
+.mini-slider {
+  margin-top: 0.4rem;
+}
+
+.mini-slide {
+  display: none;
+}
+
+.mini-slide.is-active {
+  display: block;
+}
+
+/* Slayt nav butonları */
+.mini-nav-wrap {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.mini-nav {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+  background: var(--entry);
+}
+
+.mini-nav:hover {
+  background: var(--entry-hover);
+}
+
+.mini-prev {
+  margin-right: 0.2rem;
+}
+
+/* Klavye odağı */
+.drug-slider:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* GENEL TİP YUMUŞATMA */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fade-in animasyonu (kartlarda) */
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

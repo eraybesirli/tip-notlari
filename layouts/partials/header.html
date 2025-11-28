@@ -1,0 +1,24 @@
+<header class="header">
+  <nav class="nav">
+    {{ $parent := .Parent }}
+
+    {{ if $parent }}
+      {{ if $parent.IsHome }}
+        <!-- Üst sayfa ana sayfaysa, her zaman "Ana Sayfa" yaz -->
+        <a href="{{ $parent.RelPermalink }}" class="nav-parent">
+          Ana Sayfa
+        </a>
+      {{ else }}
+        <!-- Üst sayfa bir section ise (Endokrin, Hematoloji...) -->
+        <a href="{{ $parent.RelPermalink }}" class="nav-parent">
+          {{ $parent.Title }}
+        </a>
+      {{ end }}
+    {{ else }}
+      <!-- En üstteysek (zaten ana sayfadaysak) -->
+      <a href="/" class="nav-parent">
+        Ana Sayfa
+      </a>
+    {{ end }}
+  </nav>
+</header>

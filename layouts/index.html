@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main class="main wrapper">
+  <article class="post-single">
+    <header class="post-header">
+      <h1 class="post-title">Tıp Notları</h1>
+      <div class="post-description">
+        Diyabet, oral antidiyabetikler, HT, dislipidemi hızlı bakış notları.
+      </div>
+    </header>
+
+    <div class="home-sections">
+      {{/* content içindeki bölüm klasörleri (_index.md olanlar) */}}
+      {{ range .Site.Sections }}
+        <a class="home-section-card" href="{{ .RelPermalink }}">
+          <h2>{{ .Title }}</h2>
+        </a>
+      {{ end }}
+    </div>
+  </article>
+</main>
+{{ end }}
