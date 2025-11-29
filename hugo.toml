@@ -1,4 +1,4 @@
-baseURL = "http://localhost/"
+baseURL = "https://hortluck.com/"
 languageCode = "tr-tr"
 title = "Tıp Notları"
 theme = "PaperMod"
