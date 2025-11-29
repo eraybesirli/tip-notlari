@@ -19,7 +19,9 @@
         {{ end }}
       </div>
 
-      {{ $slides := split .RawContent "\n---\n" }}
+      {{/* Önce satır sonlarını normalize et (CRLF -> LF) */}} {{ $normalized :=
+      .RawContent | replace "\r\n" "\n" }} {{ $slides := split $normalized
+      "\n---\n" }}
 
       <section class="drug-slider slide-card" tabindex="0">
         <h2>{{ .Title }}</h2>

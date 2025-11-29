@@ -1,55 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
-<head>
-  <meta charset="utf-8" />
-  <title>{{ .Title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Reveal.js CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+    <!-- Reveal.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css"
+      id="theme"
+    />
 
-  <style>
-    .reveal section {
-      font-size: 32px;
-      line-height: 1.4;
-    }
-    .reveal h1, .reveal h2 {
-      text-transform: none;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="reveal">
-    <div class="slides">
-
-      <!-- Markdown doğrudan Reveal’e veriliyor -->
-      <section
-        data-markdown
-        data-separator="^---$"
-        data-separator-vertical="^--$"
-        data-separator-notes="^Note:">
-        <textarea data-template>
+    <style>
+      .reveal section {
+        font-size: 32px;
+        line-height: 1.4;
+      }
+      .reveal h1,
+      .reveal h2 {
+        text-transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Markdown doğrudan Reveal’e veriliyor -->
+        <section
+          data-markdown
+          data-separator="^---\s*$"
+          data-separator-vertical="^--\s*$"
+          data-separator-notes="^Note:"
+        >
+          <textarea data-template>
 {{ .RawContent | safeHTML }}
-        </textarea>
-      </section>
-
+        </textarea
+          >
+        </section>
+      </div>
     </div>
-  </div>
 
-  <!-- Reveal.js JS -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+    <!-- Reveal.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
 
-  <script>
-    Reveal.initialize({
-      hash: true,
-      slideNumber: true,
-      transition: 'slide',
-      plugins: [ RevealMarkdown ]
-    });
-  </script>
-
-</body>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: "slide",
+        plugins: [RevealMarkdown],
+      });
+    </script>
+  </body>
 </html>
