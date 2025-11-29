@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/gastro/gis-kanama/ilk-yakla%C5%9F%C4%B1m/</loc>
+  </url><url>
     <loc>http://localhost:1313/endokrin/oral-antidiyabetikler/metformind/</loc>
   </url><url>
     <loc>http://localhost:1313/endokrin/diyabet/selam/</loc>
@@ -12,7 +14,9 @@
   </url><url>
     <loc>http://localhost:1313/endokrin/</loc>
   </url><url>
-    <loc>http://localhost:1313/hematoloji/</loc>
+    <loc>http://localhost:1313/gastro/</loc>
+  </url><url>
+    <loc>http://localhost:1313/gastro/gis-kanama/</loc>
   </url><url>
     <loc>http://localhost:1313/endokrin/diyabet/</loc>
   </url><url>
