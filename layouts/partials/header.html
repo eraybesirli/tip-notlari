@@ -1,24 +1,29 @@
 <header class="header">
   <nav class="nav">
-    {{ $parent := .Parent }}
+    <a href="/" class="nav-logo">
+      <img
+        src="/images/vitaller_logo_light.png"
+        alt="Vitaller Logo"
+        class="logo-light"
+      />
+      <img
+        src="/images/vitaller_logo_dark.png"
+        alt="Vitaller Logo"
+        class="logo-dark"
+      />
+    </a>
 
-    {{ if $parent }}
-      {{ if $parent.IsHome }}
-        <!-- Üst sayfa ana sayfaysa, her zaman "Ana Sayfa" yaz -->
-        <a href="{{ $parent.RelPermalink }}" class="nav-parent">
-          Ana Sayfa
-        </a>
-      {{ else }}
-        <!-- Üst sayfa bir section ise (Endokrin, Hematoloji...) -->
-        <a href="{{ $parent.RelPermalink }}" class="nav-parent">
-          {{ $parent.Title }}
-        </a>
-      {{ end }}
+    {{ $parent := .Parent }} {{ if $parent }} {{ if $parent.IsHome }}
+    <!-- Üst sayfa ana sayfaysa, her zaman "Ana Sayfa" yaz -->
+    <a href="{{ $parent.RelPermalink }}" class="nav-parent"> Ana Sayfa </a>
     {{ else }}
-      <!-- En üstteysek (zaten ana sayfadaysak) -->
-      <a href="/" class="nav-parent">
-        Ana Sayfa
-      </a>
+    <!-- Üst sayfa bir section ise (Endokrin, Hematoloji...) -->
+    <a href="{{ $parent.RelPermalink }}" class="nav-parent">
+      {{ $parent.Title }}
+    </a>
+    {{ end }} {{ else }}
+    <!-- En üstteysek (zaten ana sayfadaysak) -->
+    <a href="/" class="nav-parent"> Ana Sayfa </a>
     {{ end }}
   </nav>
 </header>

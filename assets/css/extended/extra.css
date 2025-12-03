@@ -210,3 +210,29 @@ body {
     transform: translateY(0);
   }
 }
+
+.nav-logo img {
+  height: 90px; /* burayı istediğin gibi ayarlayabilirsin */
+  width: auto;
+  display: block;
+  display: flex;
+}
+
+.logo-dark {
+  display: none;
+}
+
+/* Hugo PaperMod dark-mode detection */
+.dark .logo-dark {
+  display: block;
+}
+.dark .logo-light {
+  display: none;
+}
+
+/* Logo ile yazı arasında boşluk */
+.nav-logo {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}

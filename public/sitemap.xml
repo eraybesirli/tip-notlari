@@ -2,17 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/endokrin/oral-antidiyabetikler/metformind/</loc>
+    <loc>http://localhost:1313/test-hub/test-slides/metformind/</loc>
   </url><url>
-    <loc>http://localhost:1313/endokrin/oral-antidiyabetikler/sglt2/</loc>
+    <loc>http://localhost:1313/test-hub/test-slides/sglt2/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/endokrin/</loc>
+    <loc>http://localhost:1313/nefroloji/</loc>
   </url><url>
-    <loc>http://localhost:1313/endokrin/oral-antidiyabetikler/</loc>
+    <loc>http://localhost:1313/test-hub/test-slides/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test-hub/</loc>
   </url><url>
     <loc>http://localhost:1313/</loc>
   </url>
